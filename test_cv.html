@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Mohammed Ait Ababou</title>
+    <style>
+        /* Styles généraux */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #000000;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .cv-container {
+            display: flex;
+            max-width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background-color: rgb(192, 186, 186);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Barre latérale */
+        .sidebar {
+            width: 30%;
+            background-color: #333;
+            color: white;
+            padding: 2rem;
+        }
+        
+        .photo-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 2rem;
+            border: 3px solid white;
+            position: relative;
+        }
+        
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .photo-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #555;
+            cursor: pointer;
+        }
+        
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info p i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .skills {
+            margin-bottom: 2rem;
+        }
+        
+        .skill-item {
+            margin-bottom: 1rem;
+        }
+        
+        .skill-name {
+            margin-bottom: 0.3rem;
+        }
+        
+        .skill-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #555;
+            border-radius: 4px;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background-color: #4CAF50;
+            border-radius: 4px;
+        }
+        
+        .languages {
+            margin-bottom: 2rem;
+        }
+        
+        /* Contenu principal */
+        .main-content {
+            width: 100%;
+            padding: 2rem;
+        }
+        
+        .section {
+            margin-bottom: 2rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #050404;
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+        }
+        
+        .job {
+            margin-bottom: 1.5rem;
+        }
+        
+        .job-title {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        
+        .job-period {
+            font-style: italic;
+            color: #232222;
+            margin-bottom: 0.5rem;
+        }
+        
+        .job-description {
+            text-align: justify;
+            color: #000000;
+            font-size: 16px;
+        }
+        
+        .education-item {
+            margin-bottom: 1rem;
+            
+        }
+        
+        .education-title {
+            font-weight: bold;
+        }
+        
+        .education-year {
+            font-style: italic;
+            color: #0c0c0c;
+        }
+        
+        /* Bouton d'impression */
+        .print-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 15px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 999;
+        }
+        
+        .print-button:hover {
+            background-color: #555;
+        }
+        
+        /* Styles pour l'impression */
+        @media print {
+            body {
+                background-color: white;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+                width: 100%;
+                height: auto;
+            }
+            
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="sidebar">
+            <div class="photo-container">
+                <div class="photo-placeholder" id="photo-placeholder">
+                    <span>Ajouter photo</span>
+                </div>
+                <input type="file" id="photo-input" style="display: none" accept="image/*">
+            </div>
+            
+            <div class="contact-info">
+                <h2>Contact</h2>
+                <p><i>📱</i> 0706875989</p>
+                <p><i>📧</i> aitababoum@gmail.com</p>
+                <p><i>🏠</i> 34 avenue istiqlal app 8 nr 6 kenitra</p>
+            </div>
+            
+            <div class="languages">
+                <h2>Langues</h2>
+                <div class="skill-item">
+                    <div class="skill-name">Arabe</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 100%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Français</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Anglais</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="skills">
+                <h2>Compétences</h2>
+                <div class="skill-item">
+                    <div class="skill-name">Gestion</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Négociation</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Prise d'initiative</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Travail en équipe</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="header">
+                <h1>Mohammed Ait Ababou</h1>
+
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Expériences Professionnelles</h2>
+                
+                <div class="job">
+                    <div class="job-title">Responsable de magasin</div>
+                    <div class="job-period">2021 - 2023</div>
+                    <div class="job-description">
+                        <ul>
+                            <li><strong>Interaction avec les clients :</strong> En tant que responsable de stock, j'ai été régulièrement en contact direct avec les clients, que ce soit lors de la réception des commandes, de la gestion des ressources ou des réclamations, ou simplement lors d'interactions informelles en magasin.</li>
+                            <li><strong>Suivi et fidélisation des clients :</strong> En suivant les interactions avec les clients et en recueillant leurs commentaires, j'ai contribué à renforcer la fidélité et la satisfaction client.</li>
+                            <li><strong>Adaptabilité face à la diversité des clients :</strong> En travaillant dans un environnement professionnel diversifié, j'ai développé la capacité à m'adapter aux besoins et aux préférences variées des clients, que ce soit en termes de langue, de culture ou de style de communication.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="job">
+                    <div class="job-title">DIGISELL : Prise de rendez-vous</div>
+                    <div class="job-period">Mars 2024 - Septembre 2024</div>
+                    <div class="job-description">
+                        <ul>
+                            <li><strong>Contact avec un public senior :</strong> Une grande partie des appels que je passais étaient destinés à des personnes de 60 ans ou plus. Cela demandait de parler plus lentement, d'expliquer avec patience et de faire preuve de bienveillance. Cette expérience m'a appris à adapter mon discours à un public moins à l'aise avec les appels commerciaux.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Formation</h2>
+                
+                <div class="education-item">
+                    <div class="education-title">Faculté des sciences Ibn Tofail Kenitra</div>
+                    <div class="education-detail">DEUG Physique SMP</div>
+                </div>
+                
+                <div class="education-item">
+                    <div class="education-title">Lycée Mohamed 5</div>
+                    <div class="education-detail">Baccalauréat Scientifique</div>
+                    <div class="education-year">2018</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button class="print-button" onclick="window.print()">Imprimer CV</button>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const photoPlaceholder = document.getElementById('photo-placeholder');
+            const photoInput = document.getElementById('photo-input');
+            
+            photoPlaceholder.addEventListener('click', function() {
+                photoInput.click();
+            });
+            
+            photoInput.addEventListener('change', function() {
+                const file = this.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        // Supprimer le placeholder
+                        while (photoPlaceholder.firstChild) {
+                            photoPlaceholder.removeChild(photoPlaceholder.firstChild);
+                        }
+                        
+                        // Créer et ajouter l'image
+                        const img = document.createElement('img');
+                        img.src = e.target.result;
+                        photoPlaceholder.appendChild(img);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
